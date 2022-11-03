@@ -1,0 +1,247 @@
+Estructura Matriz MatA [3][5]
+Estructura Matriz MatB [3][5]
+Estructura Vector VecA [15]
+Estructura Vector VecB [8]
+Estructura Vector VecC [30]
+
+
+1. Cargara la Matriz B con la Matriz A en forma inversa
+	Inicio Procedimiento
+	Variable FilaMatA tipo numerica = 2
+	Variable CMatA tipo numerica = 4
+	Variable FilaA tipo numerica 
+	Variable CMatB tipo numerica
+	Mientras FilaB <= 2
+		Mientras CMatB <= 4
+		MatB[FilaB][CMatB] = MatA[FilaA][CMatA]
+		CMatA = MatA - 1
+		CMatB=CMatB + 1 
+		Fin Mientras
+		CMatB=!0
+		CMatA=2
+		FilaB=FilaA - 1
+		FilaB=FilaB + 1
+	Fin Mientras
+	Fin Procedimiento
+
+2. Cargara el Vector A con la Matriz A
+	Inicio Procedimiento
+	Variable i tipo numerica = 0
+	Variable CMatA tipo numerica = 0
+	Variable FilaMatA tipo numerica = 0
+	Mientras CMatA <= 4
+		Mientras F <= 2
+		VecA[i] = MatA[FilaMatA][CMatA]
+		i = i + 1
+		FilaMatA= FilaMatA + 1
+		Fin Mientras
+	CMatA = CMatA + 1
+	FilaMatA =! 0
+	Fin Mientras
+	Fin Procedimiento
+
+	
+
+3. Cargara el Vecotr B con la Matriz A
+	Inicio Procedimiento
+	Variable i tipo numerica = 0
+	Variable CMatA tipo numerica = 0
+	Variable FilaMatA tipo numerica = 0
+	Mientras CMatA <= 4
+		Mientras F <= 2
+		VecB[i] = MatB[FilaB][CMatB]
+		i= i + 1
+		FilaB = FilaB + 1
+		Fin Mientras
+	CMatB = CMatB + 1
+	FilaB =! 0
+	Fin Mientras
+	Fin Procedimiento
+
+
+4. Cargara el Vector C intercalando valores de la Matriz A y la Matriz B
+		Inicio Procedimiento
+		Variable i tipo numerico = 0
+		Variable F tipo numerico = 0
+		Variable C tipo numerico = 0
+		Mientras C < = 4
+			Mientras F < = 2
+			VecC [i] = MatA [F][C]
+			i = i + 1
+			VecC [i] = MatB [F][C]
+			F = F + 1
+			Fin  Mientras
+			F = 0
+			C = C + 1
+		Fin Mientras
+		Fin Procedimiento
+
+
+5. Intercalará las columnas pares de la Matriz A con las columnas pares de la Matriz B
+		Inicio Procedimiento
+		Variable i tipo numerico = 0
+		Variable F tipo numerico = 0
+		Variable C tipo numerico = 0
+		Mientras C < = 4
+			Mientras F < = 2
+			MatB [F][C] = MatB [F][C + 1]
+			MatB [F][C + 1] = MatA [F][C]
+			C = C + 2
+			F = F + 1
+			F = F + 1
+			Fin Mientras
+		F = 0
+		C = C + 2
+		Fin Mientras
+		Fin Procedimiento
+
+
+6. Calculara el mayor valor de la Matriz A y la Matriz B 
+		Inicio Procedimiento
+		Variable i tipo numerico = 0
+		Variable F tipo numerico = 0
+		Variable C tipo numerico = 0
+		Variable MaxA tipo numerico = MatA [0][0]
+		Variable MaxB tipo numerico = MatB [0][0]
+		Mientras C < = 4
+			Mientras F < = 2
+			Si Max < MatA [F][C] entonces
+				Max = MatA [F][C]
+			Fin Si
+			Si MaxUno < MatB [F][C] entonces
+				MaxUno = MatB [F][C]
+			Fin Si
+			F = F + 1
+			Fin Mientras
+		F = 0 
+		C = C + 1
+		Fin Mientras
+		Fin Procedimiento
+		
+
+
+7. Si el promedio de la Matriz A supera a la Matriz B, cargara el Vector A con la Matriz de mayor valor.
+		Inicio Procedimiento
+		Variable i tipo numerico = 0
+		Variable F tipo numerico = 0
+		Variable C tipo numerico = 0
+		Variable 
+		Mientras C < = 4
+			Mientras F < = 2
+				Max = Max + MatA [F][C]
+				MaxUno = MaxUno + MatB [F][C]
+				
+				
+				
+				F = F + 1
+			Fin Mientras
+		F = 0
+		C = C + 1
+		Fin Mientras
+		Max = Max / 15
+		MaxUno = MaxUno / 15
+		Si Max > MaxUno entonces
+			Procedimiento uno
+			MAtriz = VarA
+		Sino
+			Procedimiento dos
+			Matriz = VarB
+		Fin Si
+		Procedimiento uno
+			F = 0
+			C = 0
+			i = 0
+			Mientras F < = 2
+				Mientras C < = 4
+				VecA [i] = Matriz [F][C]
+				i = i + 1
+				C = C + 1
+				Fin Mientras
+			C = 0
+			F = F + 1
+			Fin Mientras
+		Fin Procedimiento
+		
+
+
+8. Cargara el Vector A exclusivamente con los valores mayores a 10 de la Matriz A y B informando si alcanzo
+a leer las 2 matrices.
+	Inicio Procedimiento
+	Variable i tipo numerico = 0
+	Variable F tipo numerico = 0
+	Variable C tipo numerico = 0
+		Mientras F < = 2
+			Mientras C < = 4
+				Si MatA [F][C] > 10 entonces
+					VecA[i] = MatA [F][C]
+					i = i + 1
+				Fin Si
+				C = C + 1
+			C = C + 1
+			Fin Mientras
+			C = 0
+			F = F + 1
+		Fin Mientras
+		F = 0
+		C = 0
+		Si i < 14 entonces
+			Mientras F < = 2 y i < = 14 
+				Mientras C < = 4 y i < = 14
+					Si MatB [F][C] > 10 entonces
+						VecA [i] = MatB [F][C] 
+						i = i + 1
+					Fin Si
+					C = C + 1
+				Fin Mientras
+				C = 0
+				F = F + 1
+			Fin Mientras
+		Sino
+			Mensaje : Ya se leyeron todos los valores
+		Fin Si
+	Fin Procedimiento
+			
+
+9. Se dispone de una Matriz C de [12][20] y usted debera cargar en el primer cuaddrante la Matriz A duplicada,
+en el cuadrante 2 la Matriz A triplicada, en el cuadrante 3 multiplicara el cuadrante 1 con el cuadrante 2,
+y en el cuadrante 4 lo cargara sumando los 3 anteriores.
+	Inicio Procedimiento
+	Variable i tipo numerico = 0
+	Variable F tipo numerico = 0
+	Variable C tipo numerico = 0
+		Mientras F < = 2
+			Mientras C < = 4
+				MatC[F][C] = MatA [F][C] * 2
+				MatC [F][C + 15] = MatA [F][C] * 3
+				MatC [f+9][C] = MatC [F][C] * MatC [F][C + 15]
+				MatC [F + 9] [C + 15] = MatC [F][C] + MatC [C][F + 15] + MatC[C][F + 9]
+				C = C + 1
+			Fin Mientras
+			C = 0
+			F = F + 1
+		Fin Mientras
+	Fin Procedimiento
+				 
+		
+
+
+
+10. Cargara el VectorA con la MatrizA de la siguiente manera: Solo las posiciones pares con datos de la Matriz, 
+ los impares con un numero cronologico creciente y consecutivo
+	Inicio Procedimiento
+	Estructura Matriz MatA [5][5]
+	Estructura Vector VecA [25]
+	Variable i tipo numerico
+	Variable f tipo numerico
+	Variable c tipo numerico
+		Mientras F < = 4 
+			Mientras C < = 4 y i < = 24
+			VecA [i] = i // al valor absoluto le doy el valor del indice
+			i = i + 1  
+			VecA [i] = MatA [f][c]
+			i = i + 1
+			c = c + 1
+			Fin Mientras
+			C = 0
+			F = F + 1
+		Fin Mientras
